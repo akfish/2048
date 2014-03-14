@@ -14,6 +14,9 @@ window.requestAnimationFrame(function () {
       }
       console.log(p);
   }
+  else {
+      p = {tiles:2, factor:1};
+  }
 
   new GameManager(4, KeyboardInputManager, HTMLActuator, LocalScoreManager, p.tiles, p.factor);
 });
