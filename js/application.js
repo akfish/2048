@@ -4,9 +4,9 @@ window.requestAnimationFrame(function () {
   // Secret!
   var hash = window.location.hash.split("=");
   var startTiles = 2;
+var p = {tiles:2, factor:1, size:4};
   if (hash[0] == '#cute_lentty') {
       var args = hash[1].split(",");
-      var p = {};
       for (var i = 0; i < args.length; i++)
       {
           var segs = args[i].split(":");
@@ -14,9 +14,6 @@ window.requestAnimationFrame(function () {
       }
       console.log(p);
   }
-  else {
-      p = {tiles:2, factor:1};
-  }
 
-  new GameManager(4, KeyboardInputManager, HTMLActuator, LocalScoreManager, p.tiles, p.factor);
+  new GameManager(p.size, KeyboardInputManager, HTMLActuator, LocalScoreManager, p.tiles, p.factor);
 });
