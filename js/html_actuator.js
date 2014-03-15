@@ -131,13 +131,34 @@ HTMLActuator.prototype.message = function (won) {
   if (typeof ga !== "undefined") {
     ga("send", "event", "game", "end", type, this.score);
   }
-
+  this.updateShareButton();
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
 
   this.clearContainer(this.sharingContainer);
   this.sharingContainer.appendChild(this.scoreTweetButton());
+
   twttr.widgets.load();
+};
+
+HTMLActuator.prototype.updateShareButton = function () {
+  var bd_share = document.getElementById("bdshare");
+  var data = eval("(" + bd_share.getAttribute("data") + ")");
+  if (!String.prototype.format) {
+    String.prototype.format = function() {
+      var args = arguments;
+      return this.replace(/{(\d+)}/g, function(match, number) { 
+        return typeof args[number] != 'undefined'
+          ? args[number]
+          : match
+        ;
+      });
+    };
+  }
+  console.log(data);
+  data.text = data.default_text + " | " + data.score_format.format(this.score, 2048);
+  console.log(data);  
+  bd_share.setAttribute("data", JSON.stringify(data));
 };
 
 HTMLActuator.prototype.clearMessage = function () {

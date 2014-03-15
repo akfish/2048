@@ -180,7 +180,7 @@ hr {
       font-weight: bold;
       height: 60px;
       line-height: 60px;
-      margin-top: 125px; }
+      margin-top: 200px; }
     .game-container .game-message .lower {
       display: block;
       margin-top: 59px; }
@@ -795,4 +795,8 @@ hr {
 }
 .game-container .game-message .score-social a {
     margin: 0px;
+}
+
+#bdshare {
+    width: 100%;
 }
