@@ -6,6 +6,7 @@ function HTMLActuator() {
   this.sharingContainer = document.querySelector(".score-sharing");
 
   this.score = 0;
+  this.maxValue = 2;
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -21,7 +22,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         }
       });
     });
-
+    self.maxValue = metadata.maxValue;
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
 
@@ -156,7 +157,7 @@ HTMLActuator.prototype.updateShareButton = function () {
     };
   }
   console.log(data);
-  data.text = data.default_text + " | " + data.score_format.format(this.score, 2048);
+  data.text = data.default_text + " | " + data.score_format.format(this.score, this.maxValue);
   console.log(data);  
   bd_share.setAttribute("data", JSON.stringify(data));
 };

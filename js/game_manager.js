@@ -10,6 +10,7 @@ function GameManager(size, InputManager, Actuator, ScoreManager, startTiles, fac
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
 
+  this.maxValue     = 2;
   this.setup();
   this.over         = overNow;
   if (this.over) {
@@ -67,7 +68,8 @@ GameManager.prototype.actuate = function () {
     score:     this.score,
     over:      this.over,
     won:       this.won,
-    bestScore: this.scoreManager.get()
+    bestScore: this.scoreManager.get(),
+    maxValue:  this.maxValue
   });
 
 };
@@ -131,6 +133,8 @@ GameManager.prototype.move = function (direction) {
 
           // The mighty 2048 tile
           //if (merged.value === 2048) self.won = true;
+          // Keep track of merged value
+          self.maxValue = Math.max(self.maxValue, merged.value);
         } else {
           self.moveTile(tile, positions.farthest);
         }
