@@ -1,4 +1,4 @@
-function GameManager(size, InputManager, Actuator, ScoreManager, startTiles, factor) {
+function GameManager(size, InputManager, Actuator, ScoreManager, startTiles, factor, overNow) {
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
   this.scoreManager = new ScoreManager;
@@ -6,10 +6,15 @@ function GameManager(size, InputManager, Actuator, ScoreManager, startTiles, fac
 
   this.startTiles   = startTiles == undefined ? 2 : startTiles;
   this.factor       = factor == undefined ? 1 : factor;
+
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
 
   this.setup();
+  this.over         = overNow;
+  if (this.over) {
+      this.actuate();
+  }
 }
 
 // Restart the game

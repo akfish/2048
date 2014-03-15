@@ -180,13 +180,13 @@ hr {
       font-weight: bold;
       height: 60px;
       line-height: 60px;
-      margin-top: 222px; }
+      margin-top: 125px; }
     .game-container .game-message .lower {
       display: block;
       margin-top: 59px; }
     .game-container .game-message a {
       display: inline-block;
-      background: #8f7a66;
+
       border-radius: 3px;
       padding: 0 20px;
       text-decoration: none;
@@ -194,6 +194,9 @@ hr {
       height: 40px;
       line-height: 42px;
       margin-left: 9px; }
+    .game-container .game-message .lower a {
+      background: #8f7a66;
+    }
     .game-container .game-message .score-sharing {
       display: inline-block;
       vertical-align: middle;
@@ -784,4 +787,12 @@ hr {
 .me {
     position: relative;
     top: -6px;
+}
+
+.game-container .score-social {
+    display: inline-block;
+    margin: 20px;
+}
+.game-container .game-message .score-social a {
+    margin: 0px;
 }
