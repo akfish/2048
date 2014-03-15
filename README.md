@@ -17,7 +17,7 @@ Many thanks to [rayhaanj](https://github.com/rayhaanj), [Mechazawa](https://gith
 
 ### Screenshot
 
-[![Screenshot](http://pictures.gabrielecirulli.com/2048-20140309-234100.png)](http://pictures.gabrielecirulli.com/2048-20140309-234100.png)
+[![Screenshot](https://github.com/akfish/infinity/raw/master/infinity.png)](https://github.com/akfish/infinity/raw/master/infinity.png)
 
 That screenshot is fake, by the way. I never reached 2048 :smile:
 
