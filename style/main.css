@@ -144,7 +144,8 @@ hr {
     opacity: 1; } }
 
 .game-container {
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
   padding: 15px;
   cursor: default;
@@ -780,3 +781,7 @@ hr {
         .btc-donate .address:after {
           left: 50%;
           bottom: 2px; } }
+.me {
+    position: relative;
+    top: -6px;
+}
