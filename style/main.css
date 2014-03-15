@@ -174,7 +174,13 @@ hr {
     animation: fade-in 800ms ease 1200ms;
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
-    animation-fill-mode: both; }
+    animation-fill-mode: both; 
+    background-image: url("arrow.png");
+    background-repeat: no-repeat;
+    background-position-x: 32px;
+    background-position-y: 374px;
+
+}
     .game-container .game-message p {
       font-size: 60px;
       font-weight: bold;
